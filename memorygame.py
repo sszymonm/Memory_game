@@ -57,7 +57,7 @@ class MyGUI:
                 self.root.after(1000,self.pokaz)
 
         elif(x!=self.tabPamieci[self.licznikPoprawnych]):
-            self.startButton.configure(text="skucha! (Kliknij aby rozpoczac nowa gre)",command=self.start)
+            self.startButton.configure(text="Oops! (Click to start a new game)",command=self.start)
             for z in range(0,4):
                 self.b[z].configure(command=self.pustka)
         
@@ -73,7 +73,7 @@ class MyGUI:
         for z in range(0,4):
             self.b[z].config(command=lambda a=x: self.sprawdz(a))
         
-        self.startButton.configure(text="tura: 1", command=self.pustka)
+        self.startButton.configure(text="turn: 1", command=self.pustka)
         self.pokaz()
 
     def pokaz(self):
@@ -81,7 +81,7 @@ class MyGUI:
         for z in range(0,4):
             self.b[z].config(command=self.pustka)
             
-        self.startButton.configure(text="Przypatrz się! (tura: " + str(self.runda+1) + ")")
+        self.startButton.configure(text="Take a look! (turn: " + str(self.runda+1) + ")")
         
         i = 0
         while i <= self.runda:
@@ -104,7 +104,7 @@ class MyGUI:
 
         i=0
 
-        self.startButton.configure(text="Twój ruch! (tura: " + str(self.runda) + ")")
+        self.startButton.configure(text="Your turn! (turn: " + str(self.runda) + ")")
 
         for x in range(0,4):
             self.b[x].configure(command=lambda a=x: self.sprawdz(a))
